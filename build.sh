@@ -45,6 +45,6 @@ for a in $ARCH; do
             docker build . -t $PREFIX/deepracer-robomaker:${VERSION}-cpu-${arch_p2} -f docker/Dockerfile.cpu --build-arg TENSORFLOW_VER=$tf --build-arg IMG_VERSION=$VERSION --build-arg TENSORFLOW_VER=$TF_PATH
         fi 
     elif [ "$arch_p1" == "gpu" ]; then
-        docker build . -t $PREFIX/deepracer-robomaker:${VERSION}-${a} -f docker/Dockerfile.${a} --build-arg IMG_VERSION=$VERSION
+        docker build . -t $PREFIX/deepracer-robomaker:${VERSION}-${a} -f docker/Dockerfile.${a} --build-arg IMG_VERSION=$VERSION --build-arg IMG_VERSION=$VERSION --build-arg TENSORFLOW_VER=$TF_PATH
     fi
 done
